@@ -5,4 +5,5 @@ Redmine::Plugin.register :redmine_webhook do
   version '0.0.1'
   url 'http://gitlab.cps-projects.de/gitlab/redmine_webhook'
   author_url 'http://www.cps-it.de'
+  settings :default => {'root_path' => '/home/redmine/repositories/'}, :partial => 'settings/redmine_webhook_settings'
 end
