@@ -1,3 +1,6 @@
 = redmine_webhook
 
-Description goes here
+You can use this plugin to connect a GitLab installation to your Redmine issue tracker by using GitLab's Web Hooks.
+
+Just add the plugin url (e.g. http://redmine.example.com/redmine_webhook?key=your+personal+api+key) as Web Hook url for
+push events and link your commits to Redmine issues (e.g. Fixes: #0815 in your commit message)
