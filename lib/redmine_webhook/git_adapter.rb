@@ -53,14 +53,15 @@ module RedmineWebhook
         cmd_args << @url
         cmd_args << @root_url
         ret = git_cmd(cmd_args)
-      rescue ScmCommandAborted
-        nil
+        rescue ScmCommandAborted
+          nil
       end
 
-      def commits
-        self.branches do |branch|
-
-        end
+      def fetch
+        cmd_args = %w|fetch -q --all|
+        ret = git_cmd(cmd_args)
+        rescue ScmCommandAborted
+          nil
       end
 
     end

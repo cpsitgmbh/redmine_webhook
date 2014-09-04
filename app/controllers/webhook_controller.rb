@@ -36,11 +36,14 @@ class WebhookController < ApplicationController
               }
               project_repository.project = project
               project_repository.save
-              project_repository.fetch_changesets
             end
           end
         end
       end
+    end
+    repository.fetch
+    Repository.find_all_by_identifier(repository_identifier).each do |repo|
+      repo.fetch_changesets
     end
     render :text => 'OK'
     return
